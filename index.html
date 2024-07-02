@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roel's Personal Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="header">
+    <div class="container">
+      <nav>
+        <img src="images/logo.png" class="logo">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-text">
+        <p>Student at Queens College</p>
+      </div>
+      <div class="circle-bg"></div> <!-- Circular background image -->
+    </div>
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/selfie.jpg" class="selfie">
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>My name is Roel Christian F. Medrano. I am a student at Queens College studying Computer Science.
+              My hobbies are playing video games, working out, going outside, and running. 
+            </p>
+            <div class="table-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+              <p class="tab-links" onclick="opentab('experience')">Experience</p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>  
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>AutoCAD</span><br>Designing mechanical, electrical, and plumbing drawings</li>
+                <li><span>Web Development</span><br>Developed websites using HTML, CSS, and JavaScript</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li><span>HRM Engineering June 2022 - August 2022</span><br>Enhanced project precision through field verification with engineers and clients</li>
+                <li><span>Queens Library</span><br>Automated LACES database projects and extracted data from the LACES database cleaned the data with automated pivot tables</li>
+                <li><span>Project New Yorker</span><br>Enhanced team outreach in student enrollment for Coding and ESL classes in Jamaica</li>
+              </ul>
+            </div>  
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>Graduated 2021</span><br>High School for Construction Trades, Engineering, and Architecture</li>
+                <li><span>2021-Present</span><br>CUNY Queens College</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--services section-->
+<div id="services">
+  <div class="container">
+    <h1 class="sub-title">My Services</h1>
+    <div class="services-list">
+      <div>
+        <i class="fa-solid fa-helmet-safety"></i>
+        <h2>HRM Engineering</h2>
+        <p>Prepared and setup mechanical, electrical, plumbing drawings and calculations in AutoCAD.
+          Enhanced project precision through field verification with engineers and clients.
+          Utilized XREFS to maintain design consistency with plumbing, electrical, and mechanical drawings</p>
+          <a href="#">Learn More</a>
+      </div>
+    </div>
+    <div class="services-list">
+      <div>
+        <i class="fa-solid fa-book"></i>
+        <h2>Queens Library</h2>
+        <p>Automated LACES database projects, saving 10-30 hours weekly and up to $450 in costs, showcasing tech's value.
+          Used excel to extract data from the LACES database, cleaned the data with automated pivot tables, and filtered the data.
+          Enhanced efficiency by automating RPA and UI Path Studio X in collaboration with a team of 6 people.</p>
+          <a href="#">Learn More</a>
+      </div>
+    </div>
+    <div class="services-list">
+      <div>
+        <i class="fa-solid fa-people-group"></i>
+        <h2>Project New Yorker</h2>
+        <p>Enhanced team outreach in student enrollment for Coding and ESL classes in Jamaica.
+          Launched a social media initiative to promote M-pox and Covid-19 vaccination during pregnancy.
+          Conducted an in-depth examination of community demographics with a 90% accuracy in identifying essential services.</p>
+          <a href="#">Learn More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+   
+    function opentab(tabname){
+      for(let tablink of tablinks){
+        tablink.classList.remove("active-link");
+      }
+      for(let tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+  </script>
+</body>
+</html>
