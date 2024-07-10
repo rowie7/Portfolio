@@ -94,17 +94,17 @@ nav ul li a:hover::after {
 
 .selfie-bg {
   width: 200px;
-  height: 400px; /* Adjust height to create an oval shape */
+  height: 400px; 
   background-image: url('images/DSC08273.jpg');
   background-size: cover;
   background-position: center;
-  border-radius: 50%; /* Keep border-radius to maintain the oval shape */
-  transition: box-shadow 0.3s ease-in-out; /* Adding transition for smooth effect */
+  border-radius: 50%; 
+  transition: box-shadow 0.3s ease-in-out; 
   z-index: 1;
 }
 
 .selfie:hover {
-  box-shadow: 0 0 0 5px red; /* Adjust the color and size of the outline as needed */
+  box-shadow: 0 0 0 5px red; 
 }
 
 #about {
