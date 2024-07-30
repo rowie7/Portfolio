@@ -194,90 +194,89 @@ nav ul li a:hover::after {
   background: #080808;
 }
 
-.timeline-items {
-  max-width: 1200px;
-  margin: auto;
+.card-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.card-inner {
   position: relative;
-}
-
-.timeline-items::before {
-  content: "";
-  position: absolute;
-  width: 5px;
-  height: 100%;
-  background-color: red; 
-  left: calc(50% - 1px);
-}
-
-.timeline-item {
-  margin-bottom: 40px;
   width: 100%;
-  position: relative;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
-.timeline-item:last-child {
-  margin-bottom: 0;
+.card:hover .card-inner {
+  transform: rotateY(180deg);
 }
 
-.timeline-item:nth-child(odd) {
-  padding-right: calc(50% + 30px);
-  text-align: right;
-}
-
-.timeline-item:nth-child(even) {
-  padding-left: calc(50% + 30px);
-}
-
-.timeline-dot {
-  height: 21px;
-  width: 21px;
-  background-color: red; 
-  box-shadow: 0 0 25px red,
-              0 0 50px red;
+.card-front, .card-back {
   position: absolute;
-  left: calc(50% - 8px);
-  border-radius: 50%;
-  top: 10px;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.timeline-date {
-  font-size: 20px;
-  font-weight: 800;
-  color: white;
-  margin: 6px 0 15px;
+.card-front {
+  background: #262626;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.timeline-content {
-  background-color: #262626; 
-  border: 3px solid red; 
-  padding: 30px 50px;
-  border-radius: 4rem;
-  box-shadow: 0 0 10px red; 
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+.card-front img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
 }
 
-.timeline-content:hover {
-  transform: scale(1.05);
-  background-color: red; 
-  box-shadow: 0 0 25px red; 
+.card-front h3 {
+  margin: 20px 0;
+  font-size: 24px;
 }
 
-.timeline-content h3 {
-  font-size: 20px;
-  color: white;
-  margin: 0 0 10px;
-  font-weight: 500;
+.card-back {
+  background: #000;
+  color: #fff;
+  transform: rotateY(180deg);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.timeline-content p {
-  color: white;
+.card-back h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-back p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.card-date {
   font-size: 16px;
   font-weight: 300;
-  line-height: 22px;
+  margin-top: 10px;
 }
+
 
 
 
